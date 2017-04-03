@@ -35,3 +35,53 @@ oauth2 | Auth tools for logging in
 glances | Monitoring for bugs
 
 ## Configuration Changes
+
+### 1. Create New User
+
+1. Create new user with sudo permissions
+
+```
+sudo adduser grader
+```
+
+Verify using finger
+
+```
+sudo apt-get install finger
+finger user
+```
+
+2. Give the new user sudo permissions
+
+```
+sudo visudo
+```
+
+Below the line that reads:
+```
+root ALL=(ALL:ALL) ALL
+```
+Add:
+```
+grader ALL=(ALL:ALL) ALL
+```
+
+Save changes
+
+3. Update and Upgrade All Currently Installed Packages
+
+Update all packages using
+
+```
+sudo apt-get update
+```
+
+providing a list of packages to be upgrade to newer version. We will update those with
+
+```
+sudo apt-get upgrade
+```
+
+4. Configure SSH
+
+1. Change the SSH config file
